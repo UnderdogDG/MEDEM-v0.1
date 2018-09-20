@@ -40,6 +40,12 @@ body{
 .gridMain{
     // padding: 10px;
     @include grid-std;
+    grid-template-areas:
+        "bar bar"
+        "logo img"
+        "txt img"
+        "btn btn"
+        "ico ico";
     @include media($landscape){
         grid-template-columns: 65% 35%;
         grid-template-areas:
@@ -51,7 +57,12 @@ body{
     }
     &__bar{
         @include gridArea(bar, stretch, stretch);
-        background-color: rgba(5,5,5,0.2)
+        background-color: $carbon;
+        opacity: 0.7;
+        clip-path: polygon(100% 0, 100% 100%, 69% 100%, 62% 76%, 0 76%, 0 0);
+        @include media(portrait){
+            clip-path: polygon(100% 0, 100% 100%, 53% 100%, 44% 76%, 0 76%, 0 0);
+        }
     }
     &__logo{
         @include gridArea(logo, center, center, "false");
@@ -93,16 +104,29 @@ body{
     &__txt{
         @include gridArea(txt);
         text-align: center;
+        @include mediaSize($tablet){
+            width:80%;
+        }
+        @include mediaSize($laptop){
+            width: 50%;
+        }
         h2, p{
             margin: 0;
             padding: 0 5px;
             font-size: 1rem;
+            line-height: 1.4;
+            @include mediaSize($laptop){
+                font-size: 1.4rem;
+            }
+            @include mediaSize($tablet){
+                font-size: 1.2rem;
+            }
         }
     }
     &__btn{
         @include gridArea(btn, center, center);
     }
-    &__scroll{
+    &__ico{
         @include gridArea(ico);
     }
 }
@@ -145,6 +169,17 @@ body{
     }
 }
 
+
+.gridControl{
+    background-color: $carbon;
+    @include grid-std;
+    grid-template-areas: ". ." 
+                        "tittle tittle" 
+                        "ctn img"
+                        "ctn img"
+                        ". ."
+
+}
 // #endregion ==========
 
 // #region [6] <<<<( HELPERS )>>>>

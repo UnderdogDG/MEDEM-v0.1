@@ -14,6 +14,7 @@ body {
   max-height: 100%;
   padding: 10px;
   background: #cccccc;
+  background: -o-radial-gradient(circle, #cccccc 0%, #acabab 51%, #9e9ea1 100%);
   background: radial-gradient(circle, #cccccc 0%, #acabab 51%, #9e9ea1 100%);
 }
 
@@ -47,7 +48,17 @@ body {
   -ms-flex-item-align: stretch;
       -ms-grid-row-align: stretch;
       align-self: stretch;
-  background-color: rgba(5, 5, 5, 0.2);
+  background-color: #333;
+  opacity: 0.7;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 69% 100%, 62% 76%, 0 76%, 0 0);
+          clip-path: polygon(100% 0, 100% 100%, 69% 100%, 62% 76%, 0 76%, 0 0);
+}
+
+@media screen and (orientation: portrait) {
+  .gridMain__bar {
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 53% 100%, 44% 76%, 0 76%, 0 0);
+            clip-path: polygon(100% 0, 100% 100%, 53% 100%, 44% 76%, 0 76%, 0 0);
+  }
 }
 
 .gridMain__logo {
@@ -78,14 +89,12 @@ body {
 .gridMain__img {
   width: 98%;
   height: 98%;
-  -ms-grid-row: 2;
+  -ms-grid-row: 3;
   -ms-grid-row-span: 2;
   -ms-grid-column: 2;
   grid-area: img;
-  -ms-grid-column-align: end;
       justify-self: end;
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
       align-self: center;
 }
 
@@ -98,6 +107,7 @@ body {
   top: 50%;
   right: 30px;
   -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
           transform: translateY(-50%);
 }
 
@@ -124,10 +134,35 @@ body {
   text-align: center;
 }
 
+@media only screen and (min-width: 681px) {
+  .gridMain__txt {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 1221px) {
+  .gridMain__txt {
+    width: 50%;
+  }
+}
+
 .gridMain__txt h2, .gridMain__txt p {
   margin: 0;
   padding: 0 5px;
   font-size: 1rem;
+  line-height: 1.4;
+}
+
+@media only screen and (min-width: 1221px) {
+  .gridMain__txt h2, .gridMain__txt p {
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (min-width: 681px) {
+  .gridMain__txt h2, .gridMain__txt p {
+    font-size: 1.2rem;
+  }
 }
 
 .gridMain__btn {
@@ -142,7 +177,7 @@ body {
       align-self: center;
 }
 
-.gridMain__scroll {
+.gridMain__ico {
   -ms-grid-row: 5;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -165,6 +200,7 @@ body {
   background-color: transparent;
   border-radius: 5px;
   -webkit-transition: background-color 0.5s ease-out;
+  -o-transition: background-color 0.5s ease-out;
   transition: background-color 0.5s ease-out;
   font-weight: 500;
 }
@@ -191,6 +227,19 @@ body {
 .btn:hover {
   color: #eee;
   background-color: #333;
+}
+
+.gridControl {
+  background-color: #333;
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  -ms-grid-rows: 10% 40% 30% 10% 10%;
+      grid-template-rows: 10% 40% 30% 10% 10%;
+      grid-template-areas: ". ."  "tittle tittle"  "ctn img" "ctn img" ". .";
 }
 
 .ret {

@@ -24,8 +24,7 @@
     "style-loader": "^0.23.0",
     "webpack": "^4.19.0",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.8",
-    "weinre-webpack-plugin": "^2.0.3"
+    "webpack-dev-server": "^3.1.8"
   },
   "dependencies": {
     "three": "^0.96.0"
