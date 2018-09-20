@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" 
+        xmlns:xlink="http://www.w3.org/1999/xlink" 
+        x="0px" y="0px" 
+        viewBox="0 0 528 528" 
+        enable-background="new 0 0 528 528" 
+        xml:space="preserve">
+            
+        <defs>
+            <style>
+                :root{
+                    --carbon: #333;
+                }
+
+                .nom{
+                    opacity: 0;
+                    animation: op 0.25s ease-in 0.15s normal forwards;
+                }
+    
+                @keyframes op {
+                    0%{
+                        opacity: 0;
+                    }
+                    100%{
+                        opacity: 1;
+                    }
+                }
+
+                .planet{
+                    opacity: 0;
+                    animation: rot1 0.65s ease-out 0.75s normal forwards;
+                    transform-origin: center;
+                    transform: rotate(-74deg);
+                }
+
+                @keyframes rot1 {
+                    100%{
+                        opacity: 1;
+                        transform: rotate(0);
+                    }
+                }
+
+                .planet2{
+                    opacity: 0;
+                    animation: rot1 0.65s ease-out 0.75s normal forwards;
+                    transform-origin: center;
+                    transform: rotate(-44deg);
+                }
+
+                #orbit{
+                    stroke-dasharray: 0 80 0 260 0 288 0 289 0 138 0 133;
+                    stroke-dashoffset: 0;
+                    animation: mov-1 0.65s ease-out 0.85s normal forwards,
+                                mov-2 5s ease-in-out 2s infinite;
+                }
+
+                @keyframes mov-1 {
+                    0%{
+                        stroke-dasharray: 0 80 0 260 0 288 0 289 0 138 0 133;
+                    }
+                    100%{
+                        stroke-dasharray: 0 80 174 86 174 114 235 54 103 35 97 36;
+                    }
+                } 
+            
+                @keyframes mov-2 {
+                    0%{
+                        stroke-width: 5.5;
+                        stroke-dasharray: 0 80 1108 0;
+                        stroke-dashoffset:0;
+
+                    }
+                    60%{
+                        stroke-width: 1;
+                        stroke-dasharray: 0 1188 0 0;
+                        stroke-dashoffset:-1188;
+                    }
+                    61%{
+                        stroke-width: 5.5;
+                        stroke-dasharray: 0 80 0 1108;
+                        stroke-dashoffset:0;
+                    }
+                    90%{
+                        stroke-dasharray: 0 80 1108 0;
+                        stroke-dashoffset:0;
+                    }
+                    100%{
+                        stroke-dasharray: 0 80 1108 0;
+                        stroke-dashoffset:0;
+                    }
+                }           
+            
+                .type{
+                    stroke-dasharray: 0 70 0 0 0 200;
+                    stroke-dashoffset: 0;
+                    animation: gh 0.6s ease-in 0.8s normal forwards;
+                }
+
+                @keyframes gh{
+                    0%{
+                        stroke-dasharray: 0 65 0 0 0 200;
+                    }
+                    100%{
+                        stroke-dasharray: 0 0 65 0 200 200;
+                    }
+                }
+            
+                .type2{
+                    stroke-dasharray: 0 60 0 0 0 200;
+                    stroke-dashoffset: 0;
+                    animation: gh2 0.4s ease-in 1s normal forwards;
+                }
+
+                @keyframes gh2{
+                    0%{
+                        stroke-dasharray: 0 60 0 0 0 200;
+                    }
+                    100%{
+                        stroke-dasharray: 0 0 60 0 200 200;
+                    }
+                }
+            
+                .type3{
+                    stroke-dasharray: 0 150;
+                    stroke-dashoffset: 0;
+                    animation: gh3 0.45s ease-in 0.1s normal forwards;
+                }
+                @keyframes gh3{
+                    0%{
+                        stroke-dasharray: 0 150;
+                    }
+                    100%{
+                        stroke-dasharray: 150 150;
+                    }
+                }
+            
+                .ret{
+                    animation-delay: 0.3s;
+                }
+            
+                .ret2{
+                    animation-delay: 0.6s;
+                }
+
+                .desp{
+                    stroke-dasharray: 0 0 65 0 200 200;
+                    animation: desp 5s ease-out 3s normal infinite;
+                }
+
+                @keyframes desp{
+                    0%{
+                        stroke-width: 5.5;
+                        stroke-dasharray: 0 0 65 0 200 200;
+                    }
+                    8%{
+                        stroke-width: 0;
+                        stroke-dasharray: 0 65 0 0 0 200;
+                    }
+                    11%{
+                        stroke-width: 0;
+                        opacity:0;
+                        stroke-dasharray: 0 65 0 0 0 200;
+                    }
+                    12%{
+                        stroke-width: 0;
+                        opacity:1;
+                        stroke-dasharray: 0 65 0 0 0 200;
+                    }
+                    20%{
+                        stroke-width: 5.5;
+                        opacity:1;
+                        stroke-dasharray: 0 0 65 0 200 200;
+                    }
+                    100%{
+                        stroke-dasharray: 0 0 65 0 200 200;
+                    }
+                }
+                        
+            </style>
+
+            <script>
+                setTimeout(()=>{
+                const desp = document.getElementsByClassName("sel");
+                    desp[0].classList.add('desp');
+                    desp[1].classList.add('desp');
+            },2000)
+            </script>
+        </defs>
+
+        <defs>
+            <mask id="mask">
+                <rect fill="white" width="528" height="528"/>
+                <circle id="p-rec03" fill="black" cx="264" cy="453" r="40"/>
+			    <circle id="p-rec02" fill="black" cx="397.175" cy="129.515" r="25"/>
+			    <circle id="p-rec01" fill="black" cx="264" cy="75" r="28.75"/>
+                <rect x="34" y="221.518" fill="black" width="460" height="113"/>
+            </mask>
+        </defs>
+                
+        <g id="types">
+            <g class="nom ret">
+                <polygon fill="var(--carbon)" points="34.508,298.278 44.508,298.271 44.508,248.271 64.508,268.271 72.508,260.271 44.508,232.271 
+                        34.508,238.271 	"/>
+                <polygon fill="var(--carbon)" points="104.508,243.271 104.508,298.271 114.508,298.271 114.508,233.271 	"/>
+                <polygon fill="var(--carbon)" points="194.508,242.265 194.508,232.265 140.508,232.265 134.508,236.265 134.508,294.265 
+                        140.508,298.265 194.508,298.265 194.508,288.265 144.508,288.265 144.508,242.265 	"/>
+                <path fill="var(--carbon)" d="M234.592,288.5l0.001-48.229h33.79l8.664-8.685c0,0-2.462-0.6-3.523-0.801
+                        c-1.319-0.25-5.016-0.515-5.016-0.515h-37.915l-6,4l0.048,64.041l0.226,0.182L234.592,288.5z"/>
+                <path fill="var(--carbon)" d="M244.508,300.271h22c0,0,14.646,0.937,25.792-10.21c5.604-5.604,10.208-14.164,10.208-24.771
+                        c0-10.707-4.929-17.948-4.929-17.948l-7.394,7.394c0,0,2.322,4.432,2.322,10.535c0,8.187-3.936,14.399-7.123,17.586
+                        c-8.042,8.041-17.792,7.458-17.792,7.458l-13.085-0.044L244.508,300.271z"/>
+                <polygon fill="var(--carbon)" points="382.508,242.271 382.508,232.271 328.508,232.271 322.508,236.271 322.508,294.271 
+                        328.508,298.271 382.508,298.271 382.508,288.271 332.508,288.271 332.508,242.271 	"/>
+                <polygon fill="var(--carbon)" points="414.508,298.271 424.486,298.271 424.508,248.271 444.508,268.265 452.508,260.265 
+                        424.508,232.265 414.508,238.265 	"/>
+                <polygon fill="var(--carbon)" points="484.508,243.265 484.508,298.265 494.508,298.265 494.508,233.265 	"/>
+            </g>
+            <text class="nom ret2" transform="matrix(1.1 0 0 1 45.2231 326.7285)" fill="var(--carbon)" font-family="'Titillium Web'" font-size="21">MEMORIA DIGITAL DEL ESPACIO EN MÉXICO</text>
+                    
+            <g id="lines">	
+                <line fill="none" class="type sel" stroke="var(--carbon)" stroke-width="5.5" stroke-miterlimit="10" x1="52.122" y1="292.667" x2="246.861" y2="97.874"/>
+                <line fill="none" class="type2 sel" stroke="var(--carbon)" stroke-width="5.5" stroke-miterlimit="10" x1="226.6" y1="300.291" x2="379.324" y2="147.524"/>
+                <line fill="none" class="type3 ret2" stroke="var(--carbon)" stroke-width="5.5" stroke-miterlimit="10" x1="432.505" y1="292.289" x2="508.492" y2="216.28"/>
+                <line fill="none" class="type3" stroke="var(--carbon)" stroke-width="5.5" stroke-miterlimit="10" x1="144.299" y1="265.25" x2="214.508" y2="265.25"/>
+                <line fill="none" class="type3 ret" stroke="var(--carbon)" stroke-width="5.5" stroke-miterlimit="10" x1="325.796" y1="265.25" x2="396.005" y2="265.25"/>
+            </g>
+        </g>
+            
+        <g>
+            <circle id="orbit" mask="url(#mask)" fill="none" stroke="var(--carbon)" stroke-width="5" stroke-miterlimit="10" cx="264" cy="264" r="189"/>
+        </g>
+            
+        <g id="planeta01">
+            <circle class="planet" fill="none" stroke="var(--carbon)" stroke-width="2" stroke-miterlimit="10" cx="264" cy="75" r="17"/>
+        </g>
+            
+        <g id="planeta02">
+            <circle class="planet2" fill="none" stroke="var(--carbon)" stroke-width="2" stroke-miterlimit="10" cx="397.175" cy="129.515" r="11"/>
+        </g>
+            
+        <g id="Planeta03">
+            <circle class="planet" fill="none" stroke="var(--carbon)" stroke-width="2" stroke-miterlimit="10" cx="264.509" cy="455.351" r="29"/>
+        </g>
+            
+    </svg>

@@ -1,0 +1,164 @@
+// #region [1] <<<<( VARS )>>>>
+
+$lily: #FF5A3C;
+$carbon: #333;
+$white: #eee;
+$black: #2f2f2f;
+$gray: #ccc;
+
+$portrait: portrait;
+$landscape: landscape;
+$desktop: 1851px;
+$laptop: 1221px;
+$tablet: 681px;
+$smartphone: 320;
+
+// #endregion ==========
+
+@import '_mixings';
+@import '_heritance';
+
+// #region [3] <<<<( GENERAL )>>>>
+body{
+    @include mp-0;
+    font-family:'Titillium Web', 'Roboto', sans-serif;
+    color: $carbon;
+   
+}
+
+.main{
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 10px;
+    background: rgb(204,204,204);
+    background: radial-gradient(circle, rgba(204,204,204,1) 0%, rgba(172,171,171,1) 51%, rgba(158,158,161,1) 100%);
+}
+
+.gridMain{
+    // padding: 10px;
+    @include grid-std;
+    @include media($landscape){
+        grid-template-columns: 65% 35%;
+        grid-template-areas:
+        "bar bar"
+        "logo img"
+        "txt img"
+        "btn img"
+        "ico ico";
+    }
+    &__bar{
+        @include gridArea(bar, stretch, stretch);
+        background-color: rgba(5,5,5,0.2)
+    }
+    &__logo{
+        @include gridArea(logo, center, center, "false");
+        object, .img{
+            margin: auto;
+            display: block;
+            height: 100%;
+            @include media(portrait){
+                max-width: 100%;
+            }
+        }
+    }
+    &__img{
+        @include gridArea(img, end, center, "false");
+        // @include media(portrait){
+        //     height: 80%;
+        // }
+        img{
+            display: block;
+            max-width: 100%;
+            max-height: 100%;;
+            margin: auto 20px auto auto;
+            position: relative;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+
+            @include media(portrait){
+                max-width: 90%;
+                height: auto;
+                max-height: 90%;
+                position: relative;
+                right: 0;
+                margin: 0;
+            }
+            
+        }
+    }
+    &__txt{
+        @include gridArea(txt);
+        text-align: center;
+        h2, p{
+            margin: 0;
+            padding: 0 5px;
+            font-size: 1rem;
+        }
+    }
+    &__btn{
+        @include gridArea(btn, center, center);
+    }
+    &__scroll{
+        @include gridArea(ico);
+    }
+}
+
+.btn{
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    color: $carbon;
+    border: 1px solid $carbon;
+    width: 90px;
+    height: 28px;
+    background-color: transparent;
+    border-radius: 5px;
+    transition: background-color 0.5s ease-out;
+    font-weight: 500;
+    @include mediaSize($tablet){
+        width: 120px;
+        height: 32px;
+    };
+    // position: relative;
+
+    span{
+        @include mp-0;
+        // display: block;
+        // width: 90%;
+        // position: absolute;
+        // top: 50%;
+        // left: 50%;
+        // transform: translate(-50%, -50%);
+        font-size: 0.9rem;
+        @include mediaSize($tablet){
+            font-size: 1.2rem;
+        }
+    }
+
+    &:hover{
+        color: $white;
+        background-color: $carbon;
+    }
+}
+
+// #endregion ==========
+
+// #region [6] <<<<( HELPERS )>>>>
+.ret{
+    border: 1px solid darkmagenta;
+    // background-color: rgba(0, 255, 127, 10%);
+}
+
+.ret *{
+    border: 1px solid blue;
+}
+
+.ret div{
+    border: 1px solid #adff2f;
+    // background-color: rgba(255, 0, 0, 25%);
+}
+// #endregion ===========

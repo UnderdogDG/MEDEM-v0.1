@@ -1,0 +1,41 @@
+@mixin gridArea ($name, $j: center, $a: center, $s: 'true'){
+    @if ($s == "false") {
+        width: 98%;
+        height: 98%;
+    }
+    // background-color: rgba(240, 240, 240, 0.2);
+    grid-area: $name;
+    justify-self: $j;
+    align-self: $a;
+};
+
+@mixin grid-std ($side: center) {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 10% 40% 30% 10% 10%;
+    grid-template-areas:
+        "bar bar"
+        "logo img"
+        "txt img"
+        "btn btn"
+        "ico ico";
+};
+
+@mixin mp-0{
+    margin: 0;
+    padding: 0;
+};
+
+@mixin media($orientation){
+    @media screen and (orientation: #{$orientation}) {
+        @content
+    }
+};
+
+@mixin mediaSize($size){
+    @media only screen and (min-width: #{$size}) {
+        @content
+    }
+};
