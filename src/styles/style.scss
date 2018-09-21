@@ -11,7 +11,7 @@ $landscape: landscape;
 $desktop: 1851px;
 $laptop: 1221px;
 $tablet: 681px;
-$smartphone: 320;
+$smartphone: 320px;
 
 // #endregion ==========
 
@@ -32,14 +32,35 @@ body{
     height: 100vh;
     max-width: 100%;
     max-height: 100%;
-    padding: 10px;
+    // padding: 10px; //revisar!!!!!
     background: rgb(204,204,204);
     background: radial-gradient(circle, rgba(204,204,204,1) 0%, rgba(172,171,171,1) 51%, rgba(158,158,161,1) 100%);
 }
+// .wrapper{
+//     width: 100%;
+//     height: 100%;
+//     margin: 0;
+//     padding: 0;
+// }
+
+nav{
+    width: 100%;
+    height: 10%;
+    background-color: $carbon;
+    opacity: 0.7;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    clip-path: polygon(100% 0, 100% 100%, 69% 100%, 62% 76%, 0 76%, 0 0);
+    @include media(portrait){
+        clip-path: polygon(100% 0, 100% 100%, 53% 100%, 44% 76%, 0 76%, 0 0);
+    };
+}
 
 .gridMain{
-    // padding: 10px;
     @include grid-std;
+    grid-template-columns: 55% 45%;
+    grid-template-rows: 10% 40% 30% 10% 10%;
     grid-template-areas:
         "bar bar"
         "logo img"
@@ -55,18 +76,9 @@ body{
         "btn img"
         "ico ico";
     }
-    &__bar{
-        @include gridArea(bar, stretch, stretch);
-        background-color: $carbon;
-        opacity: 0.7;
-        clip-path: polygon(100% 0, 100% 100%, 69% 100%, 62% 76%, 0 76%, 0 0);
-        @include media(portrait){
-            clip-path: polygon(100% 0, 100% 100%, 53% 100%, 44% 76%, 0 76%, 0 0);
-        }
-    }
     &__logo{
         @include gridArea(logo, center, center, "false");
-        object, .img{
+        object{
             margin: auto;
             display: block;
             height: 100%;
@@ -77,9 +89,6 @@ body{
     }
     &__img{
         @include gridArea(img, end, center, "false");
-        // @include media(portrait){
-        //     height: 80%;
-        // }
         img{
             display: block;
             max-width: 100%;
@@ -97,7 +106,7 @@ body{
                 position: relative;
                 right: 0;
                 margin: 0;
-            }
+            };
             
         }
     }
@@ -106,21 +115,40 @@ body{
         text-align: center;
         @include mediaSize($tablet){
             width:80%;
-        }
+        };
         @include mediaSize($laptop){
-            width: 50%;
+            width: 70%;
+        };
+        h2{
+            margin:0;
+            padding: 0;
+            display: block;
+            margin: auto;
+            font-weight: 600;
+            @include mediaSize($tablet){
+                font-size: 1.6rem;
+            };
+            @include mediaSize($laptop){
+                font-size: 2.2rem;
+            };
         }
-        h2, p{
+        p{
             margin: 0;
-            padding: 0 5px;
+            padding: 0 10px;
             font-size: 1rem;
             line-height: 1.4;
-            @include mediaSize($laptop){
-                font-size: 1.4rem;
-            }
+            @include mediaSize($smartphone){
+                padding: 0 15px;
+            };    
             @include mediaSize($tablet){
-                font-size: 1.2rem;
-            }
+                font-size: 1.1rem;
+            };
+            @include mediaSize($laptop){
+                font-size: 1.6rem;
+            };
+            // @include mediaSize($desktop){
+            //     font-size: 2rem;
+            // };
         }
     }
     &__btn{
@@ -173,12 +201,138 @@ body{
 .gridControl{
     background-color: $carbon;
     @include grid-std;
+    grid-template-columns: 65% 35%;
+    grid-template-rows: 10% 10% 70% 10%;
     grid-template-areas: ". ." 
                         "tittle tittle" 
-                        "ctn img"
-                        "ctn img"
-                        ". ."
+                        "ctrl img"
+                        ". .";
+    @include media($portrait){
+        grid-template-columns: 55% 45%;
+    };
+    &__tittle{
+        @include gridArea(tittle, center, center);
+        text-align: center;
+        color: $white;
+        h1{
+            margin: 0;
+            font-size: 2.4rem;
+            font-weight: 600;
+            @include mediaSize($tablet){
+                font-size: 3rem;
+            }
+            @include mediaSize($laptop){
+                font-size: 3.2rem;
+            }
+            @include mediaSize($desktop){
+                font-size: 3.4rem;
+            }
+        }
+    }
 
+    &__ctrl{
+        @include gridArea(ctrl, center, center, "false");
+        object{
+            margin: auto;
+            display: block;
+            height: 100%;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            @include media(portrait){
+                max-width: 100%;
+            };
+            @include media($landscape){
+                max-height: 80%;
+            };
+            // @include mediaSize($desktop){
+            //     max-height: 90%;
+            // };
+        }
+    }
+    &__img{
+        @include gridArea(img, center, center, "false");
+        img{
+            display: block;
+            max-width: 100%;
+            max-height: 100%;;
+            margin: auto 20px auto auto;
+            position: relative;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+
+            @include media(portrait){
+                max-width: 90%;
+                height: auto;
+                max-height: 90%;
+                position: relative;
+                right: 0;
+                margin: 0;
+            };
+            
+        }
+    }
+
+}
+
+.gridSociales{
+    @include grid-std;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 60% 20%;
+    grid-template-areas: "." "redes" ".";
+    background-color: $lily;
+    &__redes{
+        @include gridArea(redes, center, center, "false");
+        
+        .wrapper{
+            @include grid-std;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 50% 50%;
+            justify-items: center;
+            align-items: center;
+            @include media($landscape){
+                grid-template-columns: 25% 25% 25% 25%;
+                grid-template-rows: 100%;
+            };
+        }
+        .item{
+            // border: 1px solid red;
+            text-align: center;
+            color: $white;
+            h3{
+                font-weight: 100;
+                font-size: 0;
+                margin: 0;
+                opacity:0;
+                transition: opacity 0.5s ease-in, 
+                            font-size 0.6s cubic-bezier(.89,.01,.41,1.58);
+            }
+        }
+        object{
+            display: block;
+            box-sizing: border-box;
+            width: 70%;
+            max-height: 70%;
+            margin: auto;
+            @include mediaSize($tablet){
+                max-width: 200px;
+                max-height: 200px;
+            };
+            @include mediaSize($laptop){
+                max-width: 250px;
+                max-height: 250px;
+            };
+        }
+
+        object:hover + h3{
+            opacity: 1;
+            font-size: 1.5rem;
+            @include mediaSize($tablet){
+              font-size: 2rem;      
+            };
+        }
+    }
 }
 // #endregion ==========
 

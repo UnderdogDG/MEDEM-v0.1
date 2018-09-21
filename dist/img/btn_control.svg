@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" 
+	xmlns:xlink="http://www.w3.org/1999/xlink" 
+	x="0px" y="0px" 
+	viewBox="0 0 500 500" 
+	enable-background="new 0 0 500 500" 
+	xml:space="preserve">
+
+	<defs>
+		<style>
+
+			.btn{
+				fill: #CCCCCC;
+				transition: fill 0.5s ease-out;
+			}
+
+			.btn:hover{
+				fill: #FF5A3C;
+			}
+
+			.btn-s{
+				transform-origin: 0 100%;
+				transition: transform 0.5s ease-out;
+			}
+
+			.btn-s:hover{
+				transform: scale(1.02);
+			}
+	
+		</style>
+
+	</defs>
+
+	<g>
+		<line id="line" fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" x1="179.549" y1="95.896" x2="233.576" y2="149.923"/>
+		<g class="btn-s">
+			<g id="btn_1_">
+				<path  id="w" class="btn" fill="#CCCCCC" d="M306.279,126.491c0,3.626-2.938,6.565-6.564,6.565h-68.091l-37.401-37.351v-68.14
+					c0-3.626,2.94-6.565,6.566-6.565h98.926c3.626,0,6.564,2.939,6.564,6.565V126.491z"/>
+			</g>
+			<text transform="matrix(1 0 0 1 249.9404 71.9312)" fill="#FFFFFF" font-weight="600" font-family="'Titillium Web'" font-size="46.9162">W</text>
+		</g>
+	</g>
+
+	<g>
+		<line id="line_6_" fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" x1="185.648" y1="263.877" x2="239.675" y2="317.904"/>
+		<g class="btn-s">
+			<g id="btn_13_">
+				<path id="s" class="btn" fill="#CCCCCC" d="M312.38,294.472c0,3.625-2.938,6.565-6.566,6.565h-68.09l-37.401-37.352v-68.138
+					c0-3.627,2.939-6.567,6.566-6.567h98.925c3.628,0,6.566,2.939,6.566,6.567V294.472z"/>
+			</g>
+			<text transform="matrix(1 0 0 1 267.4736 239.9116)" fill="#FFFFFF" font-weight="600" font-family="'Titillium Web'" font-size="46.9162">S</text>
+		</g>
+	</g>
+
+	<g>
+		<line id="line_4_" fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" x1="26.167" y1="263.877" x2="80.194" y2="317.904"/>
+		<g class="btn-s">
+			<g id="btn_9_">
+				<path id="a" class="btn" fill="#CCCCCC" d="M152.898,294.472c0,3.625-2.939,6.565-6.565,6.565H78.242l-37.4-37.352v-68.138
+				c0-3.627,2.94-6.567,6.566-6.567h98.926c3.626,0,6.565,2.939,6.565,6.567V294.472z"/>
+			</g>
+			<text transform="matrix(1 0 0 1 107.9932 239.9116)" fill="#FFFFFF" font-weight="600" font-family="'Titillium Web'" font-size="46.9162">A</text>
+		</g>
+	</g>
+
+	<g>
+		<line id="line_2_" fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" x1="334.897" y1="263.877" x2="388.926" y2="317.904"/>
+		<g class="btn-s">
+			<g id="btn_2_">
+				<path id="d" class="btn" fill="#CCCCCC" d="M461.629,294.472c0,3.625-2.938,6.565-6.565,6.565h-68.091l-37.401-37.352v-68.138
+					c0-3.627,2.939-6.567,6.565-6.567h98.927c3.627,0,6.565,2.939,6.565,6.567V294.472z"/>
+			</g>
+			<text transform="matrix(1 0 0 1 416.7246 239.9116)" fill="#FFFFFF" font-weight="600" font-family="'Titillium Web'" font-size="46.9162">D</text>
+		</g>
+	</g>
+
+	<g>
+		<line id="line_1_" fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" x1="25.829" y1="400.98" x2="79.857" y2="455.008"/>
+		<g class="btn-s">
+			<path id="be"  class="btn" fill="#CCCCCC" d="M461.629,423c0,8.284-6.47,15-14.452,15H77.763l-36.921-36.872V384c0-8.284,6.471-15,14.452-15
+			h391.883c7.982,0,14.452,6.716,14.452,15V423z"/>
+			<text transform="matrix(1 0 0 1 282.2949 427.4951)" fill="#333" font-weight="400" font-family="'Titillium Web'" font-size="22.0776">Barra Espaciadora</text>
+		</g>
+	</g>
+
+	<g id="acciones">
+		<text transform="matrix(1 0 0 1 87.4517 467.7256)" fill="#F94A44" font-weight="400" font-family="'Titillium Web'" font-size="23.5634">Investigar ~ Animación</text>
+		<text transform="matrix(1 0 0 1 249.9395 330.6221)" fill="#F94A44" font-weight="400" font-family="'Titillium Web'" font-size="23.5634">Abajo</text>
+		<text transform="matrix(1 0 0 1 91.6025 330.6221)" fill="#F94A44" font-weight="400" font-family="'Titillium Web'" font-size="23.5634">Izquierda</text>
+		<text transform="matrix(1 0 0 1 396.5205 330.6221)" fill="#F94A44" font-weight="400" font-family="'Titillium Web'" font-size="23.5634">Derecha</text>
+		<text transform="matrix(1 0 0 1 239.6772 161.1162)" fill="#F94A44" font-weight="400" font-family="'Titillium Web'" font-size="23.5634">Arriba</text>
+	</g>
+</svg>
