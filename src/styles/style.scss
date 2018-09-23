@@ -23,7 +23,6 @@ body{
     @include mp-0;
     font-family:'Titillium Web', 'Roboto', sans-serif;
     color: $carbon;
-   
 }
 
 .main{
@@ -32,16 +31,10 @@ body{
     height: 100vh;
     max-width: 100%;
     max-height: 100%;
-    // padding: 10px; //revisar!!!!!
     background: rgb(204,204,204);
     background: radial-gradient(circle, rgba(204,204,204,1) 0%, rgba(172,171,171,1) 51%, rgba(158,158,161,1) 100%);
+    position: absolute;
 }
-// .wrapper{
-//     width: 100%;
-//     height: 100%;
-//     margin: 0;
-//     padding: 0;
-// }
 
 nav{
     width: 100%;
@@ -60,7 +53,7 @@ nav{
 .gridMain{
     @include grid-std;
     grid-template-columns: 55% 45%;
-    grid-template-rows: 10% 40% 30% 10% 10%;
+    grid-template-rows: 10% 40% 33% 10% 7%;
     grid-template-areas:
         "bar bar"
         "logo img"
@@ -125,8 +118,13 @@ nav{
             display: block;
             margin: auto;
             font-weight: 600;
+            width: 140px;
+            border-right: 12px solid $lily;
+            border-left: 12px solid $lily;
+            overflow: hidden;
             @include mediaSize($tablet){
                 font-size: 1.6rem;
+                width: 180px;
             };
             @include mediaSize($laptop){
                 font-size: 2.2rem;
@@ -134,6 +132,7 @@ nav{
         }
         p{
             margin: 0;
+            margin-top: 10px;
             padding: 0 10px;
             font-size: 1rem;
             line-height: 1.4;
@@ -155,48 +154,21 @@ nav{
         @include gridArea(btn, center, center);
     }
     &__ico{
-        @include gridArea(ico);
-    }
-}
-
-.btn{
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    color: $carbon;
-    border: 1px solid $carbon;
-    width: 90px;
-    height: 28px;
-    background-color: transparent;
-    border-radius: 5px;
-    transition: background-color 0.5s ease-out;
-    font-weight: 500;
-    @include mediaSize($tablet){
-        width: 120px;
-        height: 32px;
-    };
-    // position: relative;
-
-    span{
-        @include mp-0;
-        // display: block;
-        // width: 90%;
-        // position: absolute;
-        // top: 50%;
-        // left: 50%;
-        // transform: translate(-50%, -50%);
-        font-size: 0.9rem;
-        @include mediaSize($tablet){
-            font-size: 1.2rem;
+        @include gridArea(ico, stretch, stretch);
+        padding-bottom: 10px;
+        object{
+            margin: auto;
+            display: block;
+            height: 100%;
+            @include media(portrait){
+                max-width: 100%;
+            }
+        }
+        @include media(landscape){
+            padding-bottom: 0;
         }
     }
-
-    &:hover{
-        color: $white;
-        background-color: $carbon;
-    }
 }
-
 
 .gridControl{
     background-color: $carbon;
@@ -245,9 +217,6 @@ nav{
             @include media($landscape){
                 max-height: 80%;
             };
-            // @include mediaSize($desktop){
-            //     max-height: 90%;
-            // };
         }
     }
     &__img{
@@ -323,6 +292,10 @@ nav{
                 max-width: 250px;
                 max-height: 250px;
             };
+            @include mediaSize($desktop){
+                max-width: 300px;
+                max-height: 300px;
+            };
         }
 
         object:hover + h3{
@@ -334,6 +307,9 @@ nav{
         }
     }
 }
+
+@import '_utilities';
+@import '_animations';
 // #endregion ==========
 
 // #region [6] <<<<( HELPERS )>>>>

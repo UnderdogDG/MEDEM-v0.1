@@ -14,6 +14,7 @@ body {
   max-height: 100%;
   background: #cccccc;
   background: radial-gradient(circle, #cccccc 0%, #acabab 51%, #9e9ea1 100%);
+  position: absolute;
 }
 
 nav {
@@ -42,8 +43,8 @@ nav {
   display: grid;
   -ms-grid-columns: 55% 45%;
       grid-template-columns: 55% 45%;
-  -ms-grid-rows: 10% 40% 30% 10% 10%;
-      grid-template-rows: 10% 40% 30% 10% 10%;
+  -ms-grid-rows: 10% 40% 33% 10% 7%;
+      grid-template-rows: 10% 40% 33% 10% 7%;
       grid-template-areas: "bar bar" "logo img" "txt img" "btn btn" "ico ico";
 }
 
@@ -58,6 +59,7 @@ nav {
 .gridMain__logo {
   width: 98%;
   height: 98%;
+  background-color: rgba(240, 240, 240, 0.2);
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: logo;
@@ -83,6 +85,7 @@ nav {
 .gridMain__img {
   width: 98%;
   height: 98%;
+  background-color: rgba(240, 240, 240, 0.2);
   -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: img;
@@ -115,6 +118,7 @@ nav {
 }
 
 .gridMain__txt {
+  background-color: rgba(240, 240, 240, 0.2);
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: txt;
@@ -144,11 +148,16 @@ nav {
   display: block;
   margin: auto;
   font-weight: 600;
+  width: 140px;
+  border-right: 12px solid #FF5A3C;
+  border-left: 12px solid #FF5A3C;
+  overflow: hidden;
 }
 
 @media only screen and (min-width: 681px) {
   .gridMain__txt h2 {
     font-size: 1.6rem;
+    width: 180px;
   }
 }
 
@@ -160,6 +169,7 @@ nav {
 
 .gridMain__txt p {
   margin: 0;
+  margin-top: 10px;
   padding: 0 10px;
   font-size: 1rem;
   line-height: 1.4;
@@ -184,6 +194,7 @@ nav {
 }
 
 .gridMain__btn {
+  background-color: rgba(240, 240, 240, 0.2);
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -196,54 +207,35 @@ nav {
 }
 
 .gridMain__ico {
+  background-color: rgba(240, 240, 240, 0.2);
   -ms-grid-row: 5;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: ico;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-grid-column-align: stretch;
+      justify-self: stretch;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  padding-bottom: 10px;
 }
 
-.btn {
-  text-align: center;
-  text-decoration: none;
+.gridMain__ico object {
+  margin: auto;
   display: block;
-  color: #333;
-  border: 1px solid #333;
-  width: 90px;
-  height: 28px;
-  background-color: transparent;
-  border-radius: 5px;
-  -webkit-transition: background-color 0.5s ease-out;
-  transition: background-color 0.5s ease-out;
-  font-weight: 500;
+  height: 100%;
 }
 
-@media only screen and (min-width: 681px) {
-  .btn {
-    width: 120px;
-    height: 32px;
+@media screen and (orientation: portrait) {
+  .gridMain__ico object {
+    max-width: 100%;
   }
 }
 
-.btn span {
-  margin: 0;
-  padding: 0;
-  font-size: 0.9rem;
-}
-
-@media only screen and (min-width: 681px) {
-  .btn span {
-    font-size: 1.2rem;
+@media screen and (orientation: landscape) {
+  .gridMain__ico {
+    padding-bottom: 0;
   }
-}
-
-.btn:hover {
-  color: #eee;
-  background-color: #333;
 }
 
 .gridControl {
@@ -267,6 +259,7 @@ nav {
 }
 
 .gridControl__tittle {
+  background-color: rgba(240, 240, 240, 0.2);
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -307,6 +300,7 @@ nav {
 .gridControl__ctrl {
   width: 98%;
   height: 98%;
+  background-color: rgba(240, 240, 240, 0.2);
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: ctrl;
@@ -342,6 +336,7 @@ nav {
 .gridControl__img {
   width: 98%;
   height: 98%;
+  background-color: rgba(240, 240, 240, 0.2);
   -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: img;
@@ -391,6 +386,7 @@ nav {
 .gridSociales__redes {
   width: 98%;
   height: 98%;
+  background-color: rgba(240, 240, 240, 0.2);
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: redes;
@@ -462,6 +458,13 @@ nav {
   }
 }
 
+@media only screen and (min-width: 1851px) {
+  .gridSociales__redes object {
+    max-width: 300px;
+    max-height: 300px;
+  }
+}
+
 .gridSociales__redes object:hover + h3 {
   opacity: 1;
   font-size: 1.5rem;
@@ -470,6 +473,151 @@ nav {
 @media only screen and (min-width: 681px) {
   .gridSociales__redes object:hover + h3 {
     font-size: 2rem;
+  }
+}
+
+.btn {
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  color: #333;
+  border: 1px solid #333;
+  width: 90px;
+  height: 28px;
+  background-color: transparent;
+  border-radius: 5px;
+  -webkit-transition: background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out;
+  font-weight: 500;
+}
+
+@media only screen and (min-width: 681px) {
+  .btn {
+    width: 140px;
+    height: 52px;
+  }
+}
+
+@media only screen and (min-width: 1221px) {
+  .btn {
+    width: 150px;
+    height: 62px;
+  }
+}
+
+@media only screen and (min-width: 1851px) {
+  .btn {
+    width: 170px;
+    height: 50px;
+  }
+}
+
+.btn span {
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+@media only screen and (min-width: 681px) {
+  .btn span {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (min-width: 1221px) {
+  .btn span {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 1851px) {
+  .btn span {
+    margin-top: 14px;
+    font-size: 1.6rem;
+  }
+}
+
+.btn:hover {
+  color: #eee;
+  background-color: #333;
+}
+
+.scroll {
+  height: 0;
+  width: 100%;
+  position: absolute;
+  -webkit-transition: height 0.5s ease-in-out, width 0.5s ease-out;
+  transition: height 0.5s ease-in-out, width 0.5s ease-out;
+  overflow: hidden;
+  text-align: center;
+}
+
+.slide {
+  height: 100%;
+  width: 100%;
+}
+
+.top {
+  top: 0;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.anim {
+  -webkit-animation: type 3s ease-in 2s infinite alternate both;
+          animation: type 3s ease-in 2s infinite alternate both;
+}
+
+@-webkit-keyframes type {
+  0% {
+    max-width: 0;
+  }
+  20% {
+    max-width: 180px;
+  }
+  100% {
+    max-width: 180px;
+  }
+}
+
+@keyframes type {
+  0% {
+    max-width: 0;
+  }
+  20% {
+    max-width: 180px;
+  }
+  100% {
+    max-width: 180px;
+  }
+}
+
+.breath {
+  -webkit-animation: bt .95s ease-in 1.25s alternate infinite;
+          animation: bt .95s ease-in 1.25s alternate infinite;
+}
+
+@-webkit-keyframes bt {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.01);
+            transform: scale(1.01);
+  }
+}
+
+@keyframes bt {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.01);
+            transform: scale(1.01);
   }
 }
 
