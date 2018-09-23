@@ -53,7 +53,7 @@ nav{
 .gridMain{
     @include grid-std;
     grid-template-columns: 55% 45%;
-    grid-template-rows: 10% 40% 33% 10% 7%;
+    grid-template-rows: 10% 40% 30% 10% 10%;
     grid-template-areas:
         "bar bar"
         "logo img"
@@ -156,10 +156,14 @@ nav{
     &__ico{
         @include gridArea(ico, stretch, stretch);
         padding-bottom: 10px;
+        overflow: hidden;
         object{
             margin: auto;
             display: block;
-            height: 100%;
+            height: 90%;
+            position: relative;
+            top: 0;
+            z-index: 999;
             @include media(portrait){
                 max-width: 100%;
             }
@@ -225,7 +229,7 @@ nav{
             display: block;
             max-width: 100%;
             max-height: 100%;;
-            margin: auto 20px auto auto;
+            margin: auto;
             position: relative;
             top: 50%;
             right: 30px;
@@ -266,7 +270,6 @@ nav{
             };
         }
         .item{
-            // border: 1px solid red;
             text-align: center;
             color: $white;
             h3{

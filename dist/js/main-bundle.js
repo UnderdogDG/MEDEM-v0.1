@@ -6,7 +6,11 @@ console.log("hi");
 const wH = window.innerHeight;
 const scrollers = document.getElementsByClassName('scroll');
 const txt = document.getElementById("txt");
+const ico = document.getElementById("ico");
+const contIco = document.getElementById("contIco");
 const fra = [ 'Bienvenido', 'Bienvenido', 'Explora', 'Explora', 'Conoce', 'Conoce'];
+const elementArray = ["scroll","click"];
+let contElement = 1;
 const NEXT = 'NEXT';
 const PREV = 'PREV';
 let elemt = 1;
@@ -156,4 +160,18 @@ txt.addEventListener('animationiteration', ()=>{
         elemt++;
     }
 });
+
+// ico.addEventListener('animationiteration', ()=>{
+//     let element = document.createElement('object');
+//     console.log("eraser works!!!", contIco.childNodes[0]);
+//     if(contElement>=elementArray.length){
+//         contElement = 0;
+//     }
+//     element.data = `./img/${elementArray[contElement]}.svg`;
+//     element.id= "ico"
+//     element.classList.add = "top-bottom";
+//     contIco.removeChild(contIco.childNodes[0]);
+//     contIco.appendChild(element);
+//     contElement++;
+// });
 /* #endregion */
