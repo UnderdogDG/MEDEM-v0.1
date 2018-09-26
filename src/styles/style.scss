@@ -136,6 +136,7 @@ nav{
             padding: 0 10px;
             font-size: 1rem;
             line-height: 1.4;
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
             @include mediaSize($smartphone){
                 padding: 0 15px;
             };    
@@ -186,7 +187,7 @@ nav{
     @include media($portrait){
         grid-template-columns: 55% 45%;
     };
-    &__tittle{
+    &__title{
         @include gridArea(tittle, center, center);
         text-align: center;
         color: $white;
@@ -194,6 +195,7 @@ nav{
             margin: 0;
             font-size: 2.4rem;
             font-weight: 600;
+            line-height: 1;
             @include mediaSize($tablet){
                 font-size: 3rem;
             }
@@ -252,9 +254,24 @@ nav{
 .gridSociales{
     @include grid-std;
     grid-template-columns: 100%;
-    grid-template-rows: 20% 60% 20%;
-    grid-template-areas: "." "redes" ".";
+    grid-template-rows: 10% 10% 60% 20%;
+    grid-template-areas: "." "title" "redes" ".";
     background-color: $lily;
+    &__title{
+        @include gridArea(title);
+        color: $white;
+        h1{
+            line-height: 1;
+            margin: 0;
+            font-weight: 300;
+            @include mediaSize($tablet){
+                font-size: 2.5rem;
+            };
+            @include mediaSize($laptop){
+                font-size: 3.5rem;
+            };
+        }  
+    }
     &__redes{
         @include gridArea(redes, center, center, "false");
         
