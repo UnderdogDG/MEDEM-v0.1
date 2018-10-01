@@ -1,5 +1,6 @@
 // const THREE = require('three');
 console.log("Script working!!...");
+require('./_3dEnviroment.js');
 /* #region [1] VARS */
 console.log("hi");
 
