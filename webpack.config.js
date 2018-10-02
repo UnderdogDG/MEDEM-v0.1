@@ -1,5 +1,5 @@
 const path = require('path');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = (env)=>{
     console.log("--->", env.prod, env.dev);
@@ -18,8 +18,8 @@ module.exports = (env)=>{
             open: true,
             watchContentBase: true,
         },
-        optimization: {
-            minimizer: (env.dev) ? [] : [new UglifyJsPlugin()]
-        }
+        // optimization: {
+        //     minimizer: (env.dev) ? [] : [new UglifyJsPlugin()]
+        // }
     }
 }

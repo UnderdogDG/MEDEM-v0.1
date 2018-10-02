@@ -1,0 +1,8 @@
+newmtl Face_retopo02_UV_med:defaultMat
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.40 0.40 0.40
+Tf 1.00 1.00 1.00
+map_Kd defaultMat_Base_Color.png
+bump Head_retopo_uv_F-NM_u0_v0_copy.tif -bm 1
+Ni 1.00
